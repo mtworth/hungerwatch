@@ -74,7 +74,7 @@ The repository includes:
 * `public/home.html` — example of the logging snippet
 
 ---
-
+ 
 ## Design Philosophy
 
 HungerWatch is built around three principles:
