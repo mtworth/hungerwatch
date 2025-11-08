@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works - HungerWatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+    <div class="bg-blue-100 text-blue-800 text-center text-sm py-2 px-4 flex justify-center items-center space-x-2">
+        <span>In development - may contain errors. For help finding resources, visit <a href="https://findhelp.org" target="_blank" rel="noopener" class="underline font-semibold hover:text-blue-900">findhelp.org</a> or call <b>211</b>.</span>
+    </div>
+
+    <header class="">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="../assets/logo.png" alt="HungerWatch Logo" class="h-10">
+                <span class="text-xl font-bold">HungerWatch</span>
+            </a>
+            <nav>
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 px-3 py-2">Home</a>
+                <a href="analytics.html" class="text-gray-600 hover:text-gray-900 px-3 py-2">View Trends</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 max-w-4xl">
+        <h1 class="text-4xl font-bold mb-8 text-center">How HungerWatch Works</h1>
+
+        <div class="prose prose-lg max-w-none mb-12">
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">The Simple Concept</h2>
+                <p class="text-gray-700 mb-4">
+                    When food demand rises in a community, it often shows up online firstpeople searching for help, finding local resources, and visiting food bank pages. HungerWatch helps translate these scattered digital signals into a simple, shared indicator of collective need.
+                </p>
+                <p class="text-gray-700">
+                    Each time someone visits a "Find Food" page on participating food bank websites, HungerWatch quietly records a single, anonymous event. Over time, these small signals form an early warning system for changing food demand patterns.
+                </p>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Privacy-First Design</h2>
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold mb-3">What We DON'T Collect:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>No tracking cookies or identifiers</li>
+                        <li>No personal data or IP addresses</li>
+                        <li>No unique user tracing</li>
+                        <li>No browsing history or behavior patterns</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3">What We DO Collect:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Domain name of the food bank website</li>
+                        <li>Timestamp of the page visit</li>
+                        <li>That's it.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">For Food Banks: Adding the Monitor</h2>
+                <p class="text-gray-700 mb-6">
+                    Participating in HungerWatch is simple. Just add this small JavaScript snippet to your "Find Food" or food assistance pages:
+                </p>
+
+                <div class="bg-gray-900 text-green-400 p-6 rounded-lg overflow-x-auto mb-6">
+                    <pre><code>&lt;script&gt;
+/*
+  HungerWatch  anonymous pageview signal
+  Add this once, preferably at the bottom of your Find Food page.
+  It sends a tiny, no-cookie ping to the HungerWatch endpoint.
+*/
+
+(function() {
+  const endpoint = "https://kvytpubwfaszoserxjmr.supabase.co/functions/v1/counter";
+  try {
+    fetch(endpoint, { keepalive: true });
+  } catch (e) {
+    // Fail silently  never affect the page
+  }
+})();
+&lt;/script&gt;</code></pre>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <p class="text-sm text-gray-700">
+                        <strong>Technical Note:</strong> This script runs silently and will never interfere with your website's functionality. If the HungerWatch service is unavailable, it fails gracefully without affecting your page.
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="bg-blue-50 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold mb-6">Join the HungerWatch Network</h2>
+                <p class="text-gray-700 mb-6">
+                    Ready to help create an early warning system for food demand in your community? We'd love to have your food bank participate in this privacy-first monitoring network.
+                </p>
+
+                <div class="bg-white p-6 rounded-lg border">
+                    <h3 class="text-lg font-semibold mb-4">To get started, we'll need:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+                        <li><strong>Food Bank Name:</strong> Your organization's full name</li>
+                        <li><strong>Service Area:</strong> Counties or regions you serve</li>
+                        <li><strong>Technical Contact:</strong> Someone we can reach if anything changes</li>
+                    </ul>
+
+                    <div class="bg-gray-100 p-4 rounded border-2 border-dashed border-gray-300 text-center">
+                        <p class="text-gray-600 italic">
+                            [Contact form or email link will be added here]
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">
+                            This section is reserved for your preferred contact method
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container mx-auto p-4 text-center text-gray-600">
+            <p>&copy; 2025 HungerWatch. A public good for community awareness.</p>
+        </div>
+    </footer>
+</body>
+</html>

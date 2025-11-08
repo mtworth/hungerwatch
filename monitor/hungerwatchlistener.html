@@ -1,0 +1,16 @@
+<script>
+/*
+  FoodWatch – anonymous pageview signal
+  Add this once, preferably at the bottom of your Find Food page.
+  It sends a tiny, no-cookie ping to the FoodWatch endpoint.
+*/
+
+(function() {
+  const endpoint = "https://kvytpubwfaszoserxjmr.supabase.co/functions/v1/counter";
+  try {
+    fetch(endpoint, { keepalive: true });
+  } catch (e) {
+    // Fail silently — never affect the page
+  }
+})();
+</script>
