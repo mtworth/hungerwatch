@@ -1,14 +1,14 @@
-# 🥣 FoodWatch
+# HungerWatch
 
 *An open monitoring system of charitable food system demand*
 
-**FoodWatch** is a small, open project designed to quietly monitor web traffic to "Find Food" pages across food banks. Each pageview generates a single, anonymous event stored in a shared database. Over time, these small signals form an early indicator of changing food demand, a kind of digital pulse for community need.
+**HungerWatch** is a small, open project designed to quietly monitor web traffic to "Find Food" pages across food banks. Each pageview generates a single, anonymous event stored in a shared database. Over time, these small signals form an early indicator of changing food demand, a kind of digital pulse for community need.
 
-The system is intentionally simple: a single JavaScript line, a small serverless function, and a single database table. FoodWatch is not marketing tool. It is a shared, privacy-safe signal designed for transparency and early awareness.
+The system is intentionally simple: a single JavaScript line, a small serverless function, and a single database table. HungerWatch is not marketing tool. It is a shared, privacy-safe signal designed for transparency and early awareness.
 
 ---
 
-## What FoodWatch Does
+## What HungerWatch Does
 
 * **Counts visits** to local food bank "Find Food" pages.
 * **Records minimal information**: only the hostname (domain) and timestamp.
@@ -19,15 +19,15 @@ The system is intentionally simple: a single JavaScript line, a small serverless
 
 ## Why It Exists
 
-When food demand rises, it is often visible online first—people searching for help, finding local resources, and visiting food bank pages. FoodWatch helps translate these scattered signals into a simple, shared indicator. The goal is not to collect user data but to measure collective shifts in need.
+When food demand rises, it is often visible online first—people searching for help, finding local resources, and visiting food bank pages. HungerWatch helps translate these scattered signals into a simple, shared indicator. The goal is not to collect user data but to measure collective shifts in need.
 
-FoodWatch is built with transparency in mind:
+HungerWatch is built with transparency in mind:
 
 * **No tracking cookies or identifiers**
 * **No personal data or IP addresses**
 * **No unique user tracing**
 
-Instead, FoodWatch simply counts how often people look for food resources.
+Instead, HungerWatch simply counts how often people look for food resources.
 
 ---
 
@@ -42,7 +42,7 @@ Instead, FoodWatch simply counts how often people look for food resources.
 
 ## Technical Notes
 
-FoodWatch runs on **Supabase**, which provides both the serverless edge function and the managed PostgreSQL database. Each pageview is one row in the table:
+HungerWatch runs on **Supabase**, which provides both the serverless edge function and the managed PostgreSQL database. Each pageview is one row in the table:
 
 | Column     | Type      | Description                       |
 | ---------- | --------- | --------------------------------- |
@@ -65,7 +65,7 @@ order by day desc;
 
 ## Governance and Stewardship
 
-FoodWatch is intended to stay **open, minimal, and non-commercial**. Its core purpose is civic: to make hunger visible early, across communities. Anyone may view or reuse the data, but contributions and expansions should maintain its simplicity and privacy guarantees.
+HungerWatch is intended to stay **open, minimal, and non-commercial**. Its core purpose is civic: to make hunger visible early, across communities. Anyone may view or reuse the data, but contributions and expansions should maintain its simplicity and privacy guarantees.
 
 The repository includes:
 
@@ -77,7 +77,7 @@ The repository includes:
 
 ## Design Philosophy
 
-FoodWatch is built around three principles:
+HungerWatch is built around three principles:
 
 1. **Simplicity.** Minimal code and minimal data. The simpler it is, the easier it is to trust.
 2. **Privacy.** The project measures behavior without tracking individuals.
@@ -89,4 +89,4 @@ FoodWatch is built around three principles:
 
 For collaboration or stewardship discussions, please contact the maintainers or contributing food banks.
 
-FoodWatch is a public good: a small tool, built to help see hunger sooner.
+HungerWatch is a public good: a small tool, built to help see hunger sooner.
