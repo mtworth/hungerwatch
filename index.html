@@ -33,6 +33,23 @@
         <div class="container mx-auto p-4 text-center text-gray-600">
             <p>&copy; 2025 HungerWatch. A public good for community awareness.</p>
         </div>
+
+        <script>
+/*
+  HungerWatch – anonymous pageview signal
+  Add this once, preferably at the bottom of your Find Food page.
+  It sends a tiny, no-cookie ping to the HungerWatch endpoint.
+*/
+
+(function() {
+  const endpoint = "https://kvytpubwfaszoserxjmr.supabase.co/functions/v1/counter";
+  try {
+    fetch(endpoint, { keepalive: true });
+  } catch (e) {
+    // Fail silently – never affect the page
+  }
+})();
+</script>
     </footer>
 </body>
 </html>
